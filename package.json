@@ -1,0 +1,17 @@
+{
+  "name": "monorepo-module-federation",
+  "version": "1.0.0",
+  "scripts": {
+    "start:application": "concurrently \"npm run start:host\" \"npm run start:admin\" \"npm run start:shop\"",
+    "start:admin": "npm run start -w admin",
+    "start:shop": "npm run start -w shop",
+    "start:host": "npm run start -w host"
+  },
+  "workspaces": [
+    "packages/*",
+    "services/*"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
